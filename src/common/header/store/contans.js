@@ -1,0 +1,6 @@
+export const SEARCH_FOCUS='Header/SEARCH_FOCUS'
+export const SEARCH_BLUR='Header/SEARCH_BLUR'
+export const SET_HISTROY_DATA='Header/SET_HISTROY_DATA'
+export const ENTER_SEAECH_INFO = 'Header/ENTER_SEAECH_INFO'
+export const LEAVE_SEAECH_INFO = 'Header/LEAVE_SEAECH_INFO'
+export const HAND_SWITCH_CLICK = 'Header/HAND_SWITCH_CLICK'

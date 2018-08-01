@@ -1,0 +1,1 @@
+export const SET_DETAIL_DATA = 'home/SET_DETAIL_DATA'
