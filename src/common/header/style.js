@@ -18,8 +18,9 @@ export const Logo = styled.div`
 export const Meau = styled.div`
 	margin: 0 auto;
 	width: 960px;
+	min-width: 960px;
 	height: 100%;
-	padding-right: 20px;
+	padding-right: 40px;
 `
 export const MeatItem = styled.span`
 	padding: 0 15px;

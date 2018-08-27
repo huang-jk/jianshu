@@ -1,14 +1,13 @@
 import styled from 'styled-components'
 export const HomeWarp = styled.div`
 	overflow:hidden;
-	margin: 0 auto;
+	margin: 30px auto 0;
 	width: 960px;
 `
 export const HomeLeft = styled.div`
 	float: left;
 	width: 625px;
 	margin-left:15px;
-	padding-top: 30px;
 	.banner {
 		width:625px;
 		height: 270px;
@@ -130,7 +129,6 @@ export const LoadMore = styled.div`
 `
 export const RecomList = styled.div`
 	overflow: hidden;
-	padding: 30px 0 0;
 `
 export const RecomItem = styled.a`
 		float: left;
