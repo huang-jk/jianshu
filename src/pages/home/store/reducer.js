@@ -6,6 +6,9 @@ const defaultValue = fromJS({
 	recomList:[],
 	pageList:1,
 	showBack:false,
+	autorList:[],
+	autorPage:1,
+	pageTotal:1,
 })
 export default (state=defaultValue, action) => {
 	switch (action.type) {
@@ -22,6 +25,15 @@ export default (state=defaultValue, action) => {
 			});
 		case contans.CHANGE_SHOW:
 			return state.set('showBack',action.flag);
+		case contans.SET_AUTHOR_LIST:
+			return state.merge({
+				'autorList': fromJS(action.data),
+				'pageTotal': action.pageTotal
+			});
+		case contans.SWITCH_AUTHOR_LIST:
+			return state.merge({
+				'autorPage': action.page
+			});
 		default:
 			return state
 	}

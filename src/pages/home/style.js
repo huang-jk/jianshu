@@ -25,7 +25,11 @@ export const TopicList = styled.div`
 		display: inline-block;
 	    margin-top: 7px;
 	    font-size: 14px;
-	    color: #787878
+	    color: #787878;
+        .iconfont {
+            font-size: 13px;
+            margin-left: 2px;
+        }
 	}
 `
 export const BackTop = styled.div`
@@ -94,15 +98,20 @@ export const ListInfo = styled.div`
     }
 	.abstract {
 	  margin: 0 0 8px;
-    font-size: 13px;
-    line-height: 24px;
-    color: #999;
+        font-size: 13px;
+        line-height: 24px;
+        color: #999;
 	}
 	.meta {
 		padding-right: 0!important;
         font-size: 12px;
         font-weight: 400;
         line-height: 20px;
+        .iconfont {
+            font-size: 12px;
+            margin-right: 2px;
+        }
+    }
     .nickname {
     	margin-right: 10px;
     	color: #b4b4b4;
@@ -138,6 +147,85 @@ export const RecomItem = styled.a`
     border-radius: 4px;
     background: url(${(props)=>props.imgUrl});
     background-size: 100% 100%;
+`
+export const RecomAuthors = styled.div`
+    margin: 30px 0 20px;
+    padding-top: 0;
+    font-size: 13px;
+    text-align: center;
+`
+export const AuthorTitle = styled.div`
+    text-align:left;
+    font-size: 14px;
+    color: #969696;
+    .author-switch {
+        float: right;
+        display: inline-block;
+    }
+    .spin {
+        display: block;
+        float: left
+        margin-right: 2px;
+        font-size: 12px;
+        transition: all .2s ease-in;
+        transform-origin: center center;
+    }
+`
+export const AuthorItem = styled.li`
+    margin-top: 15px;
+    line-height: 20px;
+    text-align: left;
+    .follow {
+        float: right;
+        margin-top: 5px;
+        padding: 0;
+        font-size: 13px;
+        color: #42c02e;
+        .iconfont {
+            font-size: 13px;
+        }
+    }
+    .name {
+        padding-top: 5px;
+        margin-right: 60px;
+        font-size: 14px;
+        display: block;
+    }
+    p {
+        font-size: 12px;
+        color: #969696;
+        margin: 2px 0 10px;
+    }
+`
+export const AuthorA = styled.a`
+    float: left;
+    width: 48px;
+    height: 48px;
+    margin-right: 10px;
+    img {
+        width: 100%;
+        height: 100%;
+        border: 1px solid #ddd;
+        border-radius: 50%;
+    }
+`
+export const LookAll = styled.a.attrs({
+    href:'/'
+})`
+    display: block;
+    margin-top: 20px;
+    padding: 9px 7px 9px 12px;
+    width: 100%;
+    font-size: 13px;
+    color: #787878;
+    background-color: #f7f7f7;
+    border: 1px solid #dcdcdc;
+    border-radius: 4px;
+    text-decoration: none;
+    .iconfont {
+        font-size: 13px;
+        margin-left: 2px;
+    }
 `
 
 

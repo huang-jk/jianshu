@@ -27,8 +27,8 @@ class List extends PureComponent {
 											<p className="abstract">{item.content}</p>
 											<div className="meta">
 												<strong className="nickname">{item.nickname}</strong>
-												<span>{item.readNum}</span>
-												<span>{item.loveNum}</span>
+												<span><i className="iconfont">&#xe684;</i>{item.readNum}</span>
+												<span><i className="iconfont">&#xe60a;</i>{item.loveNum}</span>
 											</div>
 										</ListInfo>
 									</ListItem>	

@@ -20,7 +20,10 @@ class Topic extends PureComponent {
 						)
 					})
 				}
-				<a className="more-hot-collection">更多热门话题</a>
+				<a className="more-hot-collection">
+					更多热门话题
+					<i className="iconfont">&#xe6c6;</i>
+				</a>
 			</TopicList>
 		)
 	}

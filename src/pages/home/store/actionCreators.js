@@ -32,3 +32,22 @@ export const changeShow = (flag) => ({
 	type:contans.CHANGE_SHOW,
 	flag
 })
+export const setAutorList = (data,pageTotal) => ({
+	type: contans.SET_AUTHOR_LIST,
+	data:fromJS(data),
+	pageTotal:pageTotal,
+})
+export const getAutorList  = (index) => {
+	return (dispatch) => {
+		axios.get('/api/write.json?page='+index).then((res)=>{
+			const pageTotal = Math.ceil(res.data.data.length/5);
+			dispatch(setAutorList(res.data.data,pageTotal))
+		}).catch(()=>{
+			console.log('catch')
+		})
+	}
+}
+export const clickSwitch = (page) => ({
+	type: contans.SWITCH_AUTHOR_LIST,
+	page:page,
+})

@@ -189,5 +189,4 @@ export const Button = styled.div`
 		    vertical-align: middle;
 	    }
     }
-    
 `
