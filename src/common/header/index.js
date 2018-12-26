@@ -61,27 +61,40 @@ class Header extends Component {
 		const {handInputFocus , focused , handInputBlur , list , loginFlag ,loginOut} = this.props;
 		return(
 			<HeaderWarp>
-				<Link to="/">
-					<Logo />
-				</Link>
 				<Meau>
+					<Link to="/">
+						<Logo />
+					</Link>
+					<AddAction>
+						<Link to="/write">
+							<Button className="write-btn">
+								<i className="iconfont ic-write">&#xe670;</i>
+								写文章
+							</Button>
+						</Link>
+						<Button>注册</Button>
+					</AddAction>
+
 					<MeatItem className="left active">首页</MeatItem>
 					<MeatItem className="left">下载App</MeatItem>
+
 					{
 						loginFlag?<MeatItem className="right" onClick={loginOut} >退出</MeatItem>:
 						<Link to="/login"><MeatItem className="right">登录</MeatItem></Link>
 					}
+
 					<MeatItem className="right">
 						<i className="iconfont">&#xe636;</i>
 					</MeatItem>
+
 					<SearchWrap>
 						<CSSTransition
 							in={focused}
 							timeout={200}
 							classNames="siled"
 						>
-							<Search 
-								className={focused?'focused':''} 
+							<Search
+								className={focused?'focused':''}
 								onFocus={()=>{handInputFocus(list)}}
 								onBlur={handInputBlur}
 							/>
@@ -89,16 +102,8 @@ class Header extends Component {
 						<i className={focused?'focused iconfont zoom':'iconfont zoom'}>&#xe614;</i>
 						{this.showSearchInfo()}
 					</SearchWrap>
+
 				</Meau>
-				<AddAction>
-					<Link to="/write">
-						<Button className="write-btn">
-							<i className="iconfont ic-write">&#xe670;</i>
-							写文章
-						</Button>
-					</Link>
-					<Button>注册</Button>
-				</AddAction>
 			</HeaderWarp>
 		)
 	}

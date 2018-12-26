@@ -5,22 +5,18 @@ export const HeaderWarp = styled.div`
 	height: 56px;
 	border-bottom: 1px solid #f0f0f0;
 `
+export const Meau = styled.div`
+	min-width: 768px;
+    max-width: 1440px;
+    margin: 0 auto;
+	height: 100%;
+`
 export const Logo = styled.div`
-	display:block;
-	position: absolute;
-	left: 0;
-	top: 0;
-	width: 100px;
-	height: 56px;
+	float: left;
+    width: 100px;
+    height: 56px;
 	background: url(${logo});
 	background-size: contain;
-`
-export const Meau = styled.div`
-	margin: 0 auto;
-	width: 960px;
-	min-width: 960px;
-	height: 100%;
-	padding-right: 40px;
 `
 export const MeatItem = styled.span`
 	padding: 0 15px;
@@ -92,9 +88,7 @@ export const Search = styled.input.attrs({
 	}
 `
 export const AddAction = styled.div`
-	position:absolute;
-	right: 0;
-	top: 0;
+	float:right;
 `
 export const SearchInfo = styled.div`
 	position:absolute;
@@ -104,6 +98,7 @@ export const SearchInfo = styled.div`
 	margin-top: 9px;
 	background-color: #fff;
     box-shadow: 0 0 8px rgba(0,0,0,.2);
+    z-index:1000;
     &::before {
 		position: absolute;
 	    background-color: #fff;

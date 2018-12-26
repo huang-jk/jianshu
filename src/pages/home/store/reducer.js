@@ -9,6 +9,7 @@ const defaultValue = fromJS({
 	autorList:[],
 	autorPage:1,
 	pageTotal:1,
+	imgList:[],
 })
 export default (state=defaultValue, action) => {
 	switch (action.type) {
@@ -33,6 +34,10 @@ export default (state=defaultValue, action) => {
 		case contans.SWITCH_AUTHOR_LIST:
 			return state.merge({
 				'autorPage': action.page
+			});
+		case contans.GET_IMG_LIST:
+			return state.merge({
+				'imgList': fromJS(action.data)
 			});
 		default:
 			return state

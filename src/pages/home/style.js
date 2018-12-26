@@ -8,9 +8,15 @@ export const HomeLeft = styled.div`
 	float: left;
 	width: 625px;
 	margin-left:15px;
-	.banner {
+	.ant-carousel,.banner{
 		width:625px;
 		height: 270px;
+	}
+	.banner img {
+	    float: left;
+	    width: 100%;
+	    height: 100%;
+	    border-radius: 10px;
 	}
 `
 export const HomeRight = styled.div`
@@ -92,6 +98,9 @@ export const ListInfo = styled.div`
         font-weight: 700;
         line-height: 1.5;
         color: #969696;
+        &:hover {
+        text-decoration: underline;
+    }
 	}
     a:-webkit-any-link {
         text-decoration: none;
@@ -123,7 +132,7 @@ export const ListInfo = styled.div`
 }
 `
 export const LoadMore = styled.div`
-		width: 100%;
+    width: 100%;
     border-radius: 20px;
     background-color: #a5a5a5;
     height: 40px;
@@ -140,8 +149,8 @@ export const RecomList = styled.div`
 	overflow: hidden;
 `
 export const RecomItem = styled.a`
-		float: left;
-	  width: 100%;
+	float: left;
+	width: 100%;
     min-height: 50px;
     margin-bottom: 6px;
     border-radius: 4px;
@@ -158,9 +167,13 @@ export const AuthorTitle = styled.div`
     text-align:left;
     font-size: 14px;
     color: #969696;
+    cursor: pointer;
     .author-switch {
         float: right;
         display: inline-block;
+        &:hover {
+            color: #787878;
+        }
     }
     .spin {
         display: block;

@@ -51,3 +51,16 @@ export const clickSwitch = (page) => ({
 	type: contans.SWITCH_AUTHOR_LIST,
 	page:page,
 })
+export const getImgList  = () => {
+	return (dispatch) => {
+		axios.get('/api/carousel.json').then((res)=>{
+			dispatch(setImgList(res.data.data))
+		}).catch(()=>{
+			console.log('catch')
+		})
+	}
+}
+export const setImgList = (data) => ({
+	type: contans.GET_IMG_LIST,
+	data: fromJS(data),
+})

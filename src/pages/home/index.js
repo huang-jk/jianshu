@@ -1,5 +1,7 @@
 import React , { PureComponent } from 'react';
 import { connect } from 'react-redux';
+import { Carousel } from 'antd';
+import 'antd/lib/carousel/style/css';
 import { actionCreators } from './store'
 import {
 	HomeWarp,
@@ -16,14 +18,20 @@ class Home extends PureComponent {
 		window.scrollTo(0,0)
 	}
 	render() {
+		const {imgList , showBack} = this.props;
+		const newImgList = imgList.toJS()
 		return (
 			<HomeWarp>
 				<HomeLeft>
-					<img 
-						className="banner" 
-						alt="图片"
-						src="//upload.jianshu.io/admin_banners/web_images/4365/0b9ffd0051e845a9554c25f6e728dbaf61b7f25c.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/1250/h/540" 
-						/>
+					<Carousel autoplay>
+						{
+							newImgList.map(item=>{
+								return (
+									<div className="banner" key={item.id}><img alt="图片" src={item.src}/></div>
+								)
+							})
+						}
+					</Carousel>
 					<Topic />
 					<List />
 				</HomeLeft>
@@ -31,13 +39,13 @@ class Home extends PureComponent {
 					<Recommend />
 					<Writer />
 				</HomeRight>
-				{this.props.showBack?<BackTop onClick={this.backTop}>返回顶部</BackTop>:null}
-				
+				{showBack?<BackTop onClick={this.backTop}>返回顶部</BackTop>:null}
 			</HomeWarp>
 		)
 	}
 	componentDidMount() {
 		this.props.getHomeData();
+		this.props.getImgList();
 		this.bindEvent();
 	}
 	bindEvent() {
@@ -56,12 +64,16 @@ const mapAction = (dispatch) => {
 			}else {
 				dispatch(actionCreators.changeShow(false))
 			}
+		},
+		getImgList() {
+			dispatch(actionCreators.getImgList())
 		}
 	}
 }
 const mapState = (state) => {
 	return {
 		showBack:state.getIn(['home','showBack']),
+		imgList:state.getIn(['home','imgList']),
 	}
 }
 export default connect(mapState,mapAction)(Home)
